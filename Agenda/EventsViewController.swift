@@ -10,7 +10,7 @@ import UIKit
 
 let now = "\(DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .short))"
 
-var events: [String] = ["Beginning of Summer", "First Day of Classes Fall 2020", "Deadline to submit application for blah blah"]
+var events: [String] = ["Beginning of Summer", "First Day of Classes Fall 2020", "Deadline to submit application for blah blah","Finish the mobile app"]
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

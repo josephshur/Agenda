@@ -49,5 +49,6 @@ class NewEventViewController: UIViewController {
         selectedDate = newEventDatePicker.date
         dismiss(animated: true, completion: nil)
         newEventTextField.text = "\(timeStamp): \(newEventTextField.text!)"
+        addEvent()
     }
 }
