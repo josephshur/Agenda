@@ -10,7 +10,7 @@ import UIKit
 
 var selectedDate = Date()
 
-var timeStamp = "\(DateFormatter.localizedString(from: selectedDate, dateStyle: .short, timeStyle: .short))"
+var timeStamp = "\(DateFormatter.localizedString(from: selectedDate, dateStyle: .long, timeStyle: .short))"
 
 class NewEventViewController: UIViewController {
     
@@ -32,13 +32,11 @@ class NewEventViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        selectedDate = Date()
     }
     
     func addEvent() {
         events.append(_: "\(newEventTextField.text!)")
-        selectedDate = Date()
-        newEventTextField.text = "New Event" 
+        newEventTextField.text = " "
         EventsViewController().eventTableView?.reloadData()
     }
     
@@ -47,6 +45,7 @@ class NewEventViewController: UIViewController {
     }
     
     @IBAction func eventDoneButtonTapped(_ sender: Any) {
+        timeStamp = "\(DateFormatter.localizedString(from: newEventDatePicker.date, dateStyle: .long, timeStyle: .short))"
         selectedDate = newEventDatePicker.date
         dismiss(animated: true, completion: nil)
         newEventTextField.text = "\(timeStamp): \(newEventTextField.text!)"
